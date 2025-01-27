@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars Rewards</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #4365e2 url('bg.jpg'); center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            padding: 20px;
+            text-align: right;
+        }
+
+        .language-btn {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .claim-btn {
+            background: #ffd700;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 0 #d4af37;
+        }
+
+        .download-text {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .store-btn {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        .footer {
+            background: black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="language-btn" onclick="toggleLanguage()">
+            <span id="langText">English</span>
+        </button>
+    </div>
+
+    <div class="main-content">
+        <img src="logo.webp" alt="Brawl Stars Logo" class="logo">
+        <h1 class="title" id="mainTitle">Claim a Reward in Brawl Stars!</h1>
+        <button class="claim-btn" onclick="openBrawlStars()" id="claimBtn">Claim Reward</button>
+        <p class="download-text" id="downloadText">Download Brawl Stars</p>
+        <div class="store-buttons">
+            <a href="https://brawlstars.onelink.me/XKTM/socialreferral" target="_blank">
+                <img src="ps.png" alt="Play Store" class="store-btn">
+            </a>
+            <a href="https://brawlstars.onelink.me/XKTM/socialreferral" target="_blank">
+                <img src="as.png" alt="App Store" class="store-btn">
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="#">Parent's guide</a>
+        <a href="#">Terms & Service</a>
+        <a href="#">Privacy Policy</a>
+    </footer>
+
+    <script>
+        let isEnglish = true;
+
+        function toggleLanguage() {
+            isEnglish = !isEnglish;
+            const langBtn = document.getElementById('langText');
+            const mainTitle = document.getElementById('mainTitle');
+            const claimBtn = document.getElementById('claimBtn');
+            const downloadText = document.getElementById('downloadText');
+
+            if (isEnglish) {
+                langBtn.textContent = 'English';
+                mainTitle.textContent = 'Claim a Reward in Brawl Stars!';
+                claimBtn.textContent = 'Claim Reward';
+                downloadText.textContent = 'Download Brawl Stars';
+            } else {
+                langBtn.textContent = 'Français';
+                mainTitle.textContent = 'Réclamez une récompense dans Brawl Stars!';
+                claimBtn.textContent = 'Réclamer la récompense';
+                downloadText.textContent = 'Télécharger Brawl Stars';
+            }
+        }
+
+        function openBrawlStars() {
+            window.location.href = 'brawlstars://';
+        }
+    </script>
+</body>
+</html>
